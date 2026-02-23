@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema de Gestão Financeira</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Gestão</h2>
+    <button onclick="mostrarTela('dashboard')">Dashboard</button>
+    <button onclick="mostrarTela('estoque')">Estoque</button>
+    <button onclick="mostrarTela('vendas')">Vendas</button>
+    <button onclick="mostrarTela('despesas')">Despesas</button>
+  </div>
+
+  <div class="content">
+
+    <!-- DASHBOARD -->
+    <div id="dashboard" class="tela">
+      <h1>Dashboard</h1>
+      <div class="cards">
+        <div class="card">
+          <h3>Faturamento</h3>
+          <p id="totalVendas">R$ 0</p>
+        </div>
+        <div class="card">
+          <h3>Despesas</h3>
+          <p id="totalDespesas">R$ 0</p>
+        </div>
+        <div class="card">
+          <h3>Lucro Líquido</h3>
+          <p id="lucroLiquido">R$ 0</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESTOQUE -->
+    <div id="estoque" class="tela hidden">
+      <h1>Estoque</h1>
+      <input id="nomeProduto" placeholder="Produto">
+      <input id="precoProduto" type="number" placeholder="Preço">
+      <input id="qtdProduto" type="number" placeholder="Quantidade">
+      <button onclick="adicionarProduto()">Adicionar</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Qtd</th>
+          </tr>
+        </thead>
+        <tbody id="listaEstoque"></tbody>
+      </table>
+    </div>
+
+    <!-- VENDAS -->
+    <div id="vendas" class="tela hidden">
+      <h1>Registrar Venda</h1>
+      <input id="valorVenda" type="number" placeholder="Valor da venda">
+      <button onclick="registrarVenda()">Registrar</button>
+    </div>
+
+    <!-- DESPESAS -->
+    <div id="despesas" class="tela hidden">
+      <h1>Registrar Despesa</h1>
+      <input id="valorDespesa" type="number" placeholder="Valor da despesa">
+      <button onclick="registrarDespesa()">Registrar</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
